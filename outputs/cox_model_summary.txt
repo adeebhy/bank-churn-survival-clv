@@ -1,0 +1,82 @@
+Call:
+coxph(formula = surv_obj ~ total_relationship_count + months_inactive_12_mon + 
+    contacts_count_12_mon + total_revolving_bal + total_trans_ct + 
+    total_ct_chng_q4_q1 + avg_utilization_ratio + credit_limit + 
+    income_category + card_category, data = df)
+
+  n= 10127, number of events= 1627 
+
+                                    coef  exp(coef)   se(coef)       z Pr(>|z|)
+total_relationship_count      -2.412e-01  7.856e-01  1.723e-02 -14.004  < 2e-16
+months_inactive_12_mon         8.829e-02  1.092e+00  2.169e-02   4.071 4.68e-05
+contacts_count_12_mon          2.717e-01  1.312e+00  2.302e-02  11.805  < 2e-16
+total_revolving_bal           -5.084e-04  9.995e-01  5.236e-05  -9.709  < 2e-16
+total_trans_ct                -3.167e-02  9.688e-01  1.352e-03 -23.428  < 2e-16
+total_ct_chng_q4_q1           -1.299e+00  2.729e-01  1.126e-01 -11.535  < 2e-16
+avg_utilization_ratio         -1.531e-01  8.580e-01  1.798e-01  -0.852   0.3944
+credit_limit                  -6.937e-06  1.000e+00  4.663e-06  -1.488   0.1369
+income_category$40K - $60K    -7.464e-02  9.281e-01  1.237e-01  -0.603   0.5464
+income_category$60K - $80K    -8.152e-02  9.217e-01  1.218e-01  -0.669   0.5034
+income_category$80K - $120K    2.471e-02  1.025e+00  1.116e-01   0.221   0.8248
+income_categoryLess than $40K  1.275e-01  1.136e+00  1.186e-01   1.076   0.2821
+income_categoryUnknown         9.979e-02  1.105e+00  1.245e-01   0.801   0.4229
+card_categoryGold              1.055e+00  2.873e+00  2.363e-01   4.467 7.93e-06
+card_categoryPlatinum          8.801e-01  2.411e+00  4.572e-01   1.925   0.0542
+card_categorySilver            2.134e-01  1.238e+00  1.381e-01   1.544   0.1225
+                                 
+total_relationship_count      ***
+months_inactive_12_mon        ***
+contacts_count_12_mon         ***
+total_revolving_bal           ***
+total_trans_ct                ***
+total_ct_chng_q4_q1           ***
+avg_utilization_ratio            
+credit_limit                     
+income_category$40K - $60K       
+income_category$60K - $80K       
+income_category$80K - $120K      
+income_categoryLess than $40K    
+income_categoryUnknown           
+card_categoryGold             ***
+card_categoryPlatinum         .  
+card_categorySilver              
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+                              exp(coef) exp(-coef) lower .95 upper .95
+total_relationship_count         0.7856     1.2728    0.7596    0.8126
+months_inactive_12_mon           1.0923     0.9155    1.0468    1.1397
+contacts_count_12_mon            1.3122     0.7621    1.2543    1.3728
+total_revolving_bal              0.9995     1.0005    0.9994    0.9996
+total_trans_ct                   0.9688     1.0322    0.9663    0.9714
+total_ct_chng_q4_q1              0.2729     3.6638    0.2189    0.3403
+avg_utilization_ratio            0.8580     1.1655    0.6032    1.2205
+credit_limit                     1.0000     1.0000    1.0000    1.0000
+income_category$40K - $60K       0.9281     1.0775    0.7282    1.1828
+income_category$60K - $80K       0.9217     1.0849    0.7260    1.1703
+income_category$80K - $120K      1.0250     0.9756    0.8236    1.2757
+income_categoryLess than $40K    1.1360     0.8803    0.9005    1.4332
+income_categoryUnknown           1.1049     0.9050    0.8657    1.4103
+card_categoryGold                2.8729     0.3481    1.8081    4.5648
+card_categoryPlatinum            2.4110     0.4148    0.9841    5.9067
+card_categorySilver              1.2378     0.8079    0.9442    1.6227
+
+Concordance= 0.832  (se = 0.005 )
+Likelihood ratio test= 2309  on 16 df,   p=<2e-16
+Wald test            = 2297  on 16 df,   p=<2e-16
+Score (logrank) test = 2660  on 16 df,   p=<2e-16
+
+
+Proportional-hazards assumption check (Schoenfeld residuals):
+                         chisq df       p
+total_relationship_count 18.03  1 2.2e-05
+months_inactive_12_mon   25.82  1 3.8e-07
+contacts_count_12_mon     3.48  1 0.06223
+total_revolving_bal       1.74  1 0.18770
+total_trans_ct            2.76  1 0.09679
+total_ct_chng_q4_q1       1.26  1 0.26257
+avg_utilization_ratio     7.96  1 0.00477
+credit_limit             14.05  1 0.00018
+income_category          16.74  5 0.00502
+card_category             2.70  3 0.43958
+GLOBAL                   72.04 16 4.4e-09
